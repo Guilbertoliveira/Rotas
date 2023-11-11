@@ -111,6 +111,43 @@ const MyComponent = () => {
 
 ```
 
+<h2>Themes</h2>
+
+<h3> Adicionando um thema para englobar diversas rotas que tem a mesma interface padrão </h3>
+
+- Pra isso, criei uma pasta com o nome de `themes` e dentro dela uma página padrão que nela existe um `<Outlet>`.
+
+
+<h2>Paginas dinamicas</h2>
+
+- Utiliza o Link um pouco diferente passando o id
+- Em questão de paginas dinamicas percebi a necessidade de utilizar o `useParams` para pegar a url, o retorno do params é um objeto
+- Na rota será necessario passar como uma rota dinamica com o `id` 
+
+<h4>nas rotas ficaria assim</h4>
+
+```
+
+<Route path="/posts" element={<Posts />} >
+   <Route path=":id" element={<Post />} />
+</Route>
+
+```
+
+<h4> No menu ficaria assim </h4>
+
+```
+
+<ul>
+  {listaPost.map(({ id, title }) => (
+    <li key={id}>
+      <Link to={`/posts/${id}`}>{title}</Link>
+    </li>
+  ))}
+</ul>
+
+```
+
 <h3> Projeto rodando </h3>
 <a href="https://rotas-nine.vercel.app/">Link Vercel</a>
 
