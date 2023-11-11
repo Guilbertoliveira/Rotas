@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import * as S from './styles'
-import listaPost from '../../../../mock';
+import listaPost from '../../mock';
 
 export function Menu() {
 
